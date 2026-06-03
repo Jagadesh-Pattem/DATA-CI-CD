@@ -1,1 +1,3 @@
-This is the commit2 file. I'll stack this commit on top of commit1
+This is the commit2 file. I'll stack this commit on top of commit1. Hi testing to fail the commit1.
+
+Adding this line to see if commit3 fails.

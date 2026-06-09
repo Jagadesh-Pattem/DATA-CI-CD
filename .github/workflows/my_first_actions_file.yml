@@ -1,1 +1,46 @@
 # This is my first line in the github actions file. 
+
+# Name of the workflow file
+name: My first github actions yaml workflow file
+
+# Triggers on which the workflow will run. Can be event based or time based.
+# when to do
+on:
+  # When someone pushes the code
+  push:
+    # We can specify on which branches the action should happen to run the workflow file
+    branches:
+      - main
+      - temp_branch
+  pull_request:
+    branches:
+      - main
+      - temp_branch
+  schedule:
+    - cron: '0 0 * * *' # This will run the workflow every day at midnight
+
+# Jobs to run when the action has been triggered
+# What to do
+jobs:
+  my-first-workflow-job:
+    # Guthub gives you a free of cost VM to run your workflow file
+    # This specifies the operating system on which the job will run
+    runs-on: ubuntu-latest
+
+    # Actual actions
+    steps:
+    - name: Pull the code into the VM
+      # You can use actions defined by others as well. Use owner/repo@version
+      uses: actions/checkout@v2
+
+    - name: Setup a python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+
+    - name: Install Dependencies
+      run: pip install pandas
+
+    - name: Run the code
+      run: python my_script.py
+

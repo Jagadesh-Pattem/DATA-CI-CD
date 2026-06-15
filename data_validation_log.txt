@@ -1,1 +1,11 @@
 2026-06-15 18:08:10.800948: Error validating data: [Errno 2] No such file or directory: 'data.csv'
+2026-06-15 18:15:23.624326: Data Loaded Successfully
+2026-06-15 18:15:23.637994: Missing data found:
+   EmployeeID     Name Department   Salary  Experience age
+1         102      Bob        NaN  72000.0         3.0  ab
+2         103  Charlie  Marketing      NaN         7.0  45
+3         104      NaN      Sales  65000.0         NaN  56
+2026-06-15 18:15:23.638048: Invalid age found:
+   EmployeeID Name Department   Salary  Experience age
+1         102  Bob        NaN  72000.0         3.0  ab
+2026-06-15 18:15:23.638076: Data validation failed with errors.

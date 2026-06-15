@@ -44,3 +44,8 @@ jobs:
     - name: Run the code
       run: python my_script.py
 
+    - name: Show Time
+      run: |
+        date
+        date -u
+

@@ -1,0 +1,36 @@
+name: Data Validator Actions file
+
+on:
+  push:
+    branches:
+      - main
+      - temp_branch
+  pull_request:
+    branches:
+       - main
+       - temp_branch
+
+jobs:
+    data-validation-pipeline:
+        runs-on: ubuntu-latest
+        steps:
+
+        - name: Checkout Code
+          uses: actions/checkout@v2
+
+        - name: Setup Python
+          uses: actions/setup-python@v2
+          with:
+            python-version: 3.2
+
+        - name: Install Libraries
+          run: pip install pandas datetime
+        
+        - name: Run the Script
+          run: python3 data_validation_pipeline.py
+
+        - name: Push the log file to github repo
+          uses: mikael/publish-to-github-action/master
+          env:
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+            BRANCH_NAME: main

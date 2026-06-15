@@ -30,7 +30,9 @@ jobs:
           run: python3 github_actions/data_validation_pipeline.py
 
         - name: Push the log file to github repo
-          uses: mikael/publish-to-github-action@master
-          env:
-            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-            BRANCH_NAME: main
+          run: |
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add .
+            git commit -m "Update validation logs" || echo "No changes to commit"
+            git push

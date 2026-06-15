@@ -1,0 +1,12 @@
+2026-06-15 16:58:39.915860: Data Loaded Successfully
+2026-06-15 16:58:39.918482: Error validating data: DataFrame.isnull() got an unexpected keyword argument 'axis'
+2026-06-15 17:00:20.446049: Data Loaded Successfully
+2026-06-15 17:00:20.458050: Missing data found:
+   EmployeeID     Name Department   Salary  Experience age
+1         102      Bob        NaN  72000.0         3.0  ab
+2         103  Charlie  Marketing      NaN         7.0  45
+3         104      NaN      Sales  65000.0         NaN  56
+2026-06-15 17:00:20.458050: Invalid age found:
+   EmployeeID Name Department   Salary  Experience age
+1         102  Bob        NaN  72000.0         3.0  ab
+2026-06-15 17:00:20.459006: Data validation failed with errors.

@@ -1,0 +1,6 @@
+EmployeeID,Name,Department,Salary,Experience,age
+101,Alice,Engineering,85000,5,28
+102,Bob,,72000,3,ab
+103,Charlie,Marketing,,7,45
+104,,Sales,65000,,56
+105,Eve,HR,58000,2,18

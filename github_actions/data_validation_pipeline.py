@@ -33,5 +33,5 @@ def validate_data(file_path):
         return False
     
 if __name__ == "__main__":
-    file_path = 'data.csv'
+    file_path = 'github_actions/data.csv'
     validate_data(file_path)

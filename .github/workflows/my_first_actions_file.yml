@@ -42,7 +42,7 @@ jobs:
       run: pip install pandas
 
     - name: Run the code
-      run: python ../../github_actions/my_script.py
+      run: python github_actions/my_script.py
 
     - name: Show Time
       run: |

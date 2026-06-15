@@ -27,7 +27,7 @@ jobs:
           run: pip install pandas datetime
         
         - name: Run the Script
-          run: python3 ../../github_actions/data_validation_pipeline.py
+          run: python3 github_actions/data_validation_pipeline.py
 
         - name: Push the log file to github repo
           uses: mikael/publish-to-github-action@master

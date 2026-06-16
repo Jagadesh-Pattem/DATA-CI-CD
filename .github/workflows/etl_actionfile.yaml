@@ -16,21 +16,21 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout Code
-            - uses: actions/checkout@v2
+              uses: actions/checkout@v2
 
             - name: setup Python
-            - uses: actions/setup-python@v2
-            - with:
+              uses: actions/setup-python@v2
+              with:
                 python-version: 3.8
 
             - name: install dependencies
-            - run: pip install pandas requests datetime
+              run: pip install pandas requests datetime
 
             - name: run ETL script
-            - run: python3 github_actions/basic_etl_pipeline.py
+              run: python3 github_actions/basic_etl_pipeline.py
 
             - name: commit changes to git hub
-            - run: |
+              run: |
                 git config --global user.name "github-actions"
                 git config --global user.email "github-actions@github.com"
                 git add .

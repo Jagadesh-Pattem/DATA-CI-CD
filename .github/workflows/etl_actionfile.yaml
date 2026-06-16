@@ -1,0 +1,38 @@
+name: ETL Automation
+
+on:
+    # push:
+    #     branches:
+    #         - main
+    #         - temp_branch
+    # pull_request:
+    #     branches:
+    #         - main
+    #         - temp_branch
+    workflow_dispatch:
+
+jobs:
+    etl_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout Code
+            - uses: actions/checkout@v2
+
+            - name: setup Python
+            - uses: actions/setup-python@v2
+            - with:
+                python-version: 3.8
+
+            - name: install dependencies
+            - run: pip install pandas requests datetime
+
+            - name: run ETL script
+            - run: python3 github_actions/basic_etl_pipeline.py
+
+            - name: commit changes to git hub
+            - run: |
+                git config --global user.name "github-actions"
+                git config --global user.email "github-actions@github.com"
+                git add .
+                git commit -m "Data pushed to github_actions/output.csv" || echo "No changes to commit"
+                git push

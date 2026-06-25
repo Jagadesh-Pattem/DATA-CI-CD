@@ -23,4 +23,4 @@ jobs:
               with:
                 context: ./docker/auto_deploy
                 push: true
-                tags: user/jaga1996/ci_cd_learning:my_first_auto_pushed_image
+                tags: jaga1996/ci_cd_learning:my_first_auto_pushed_image

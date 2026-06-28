@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-first-k8s-deployment-file
+spec:
+  selector: # Cluster Info
+    matchLabels:
+      app: my-first-k8s-pod # Checks for pod with name my-first-k8s-pod
+  replicas: 2
+  template: # Pods Info
+    metadata:
+      labels:
+        app: my-first-k8s-pod
+    spec:
+      containers: # Container Info
+      - name: my-first-k8s-container
+        image: jaga1996/ci_cd_learning:my_second_k8s_image # Image Info
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8501

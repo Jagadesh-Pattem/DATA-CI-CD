@@ -89,3 +89,13 @@
    EmployeeID Name Department   Salary  Experience age
 1         102  Bob        NaN  72000.0         3.0  ab
 2026-06-28 18:28:28.626958: Data validation failed with errors.
+2026-07-02 17:55:16.632210: Data Loaded Successfully
+2026-07-02 17:55:16.648741: Missing data found:
+   EmployeeID     Name Department   Salary  Experience age
+1         102      Bob        NaN  72000.0         3.0  ab
+2         103  Charlie  Marketing      NaN         7.0  45
+3         104      NaN      Sales  65000.0         NaN  56
+2026-07-02 17:55:16.648795: Invalid age found:
+   EmployeeID Name Department   Salary  Experience age
+1         102  Bob        NaN  72000.0         3.0  ab
+2026-07-02 17:55:16.648824: Data validation failed with errors.

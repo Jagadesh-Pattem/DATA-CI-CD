@@ -64,10 +64,10 @@ def assign_medications_to_patients(patients, medications):
 
 def main():
     st.title("Realtime Healthcare Data Pipeline")
-    st.write("THis dashboard simulates a real-time CI/CD data pipeline for healthcare organizations.")
+    st.write("This dashboard simulates a real-time CI/CD data pipeline for healthcare organizations.")
     st.write("## Real-time data refresh")
     if st.button("Refresh Data"):
-        st.experimental_rerun()
+        st.rerun()
 
     patients_data = fetch_patients()
     healthcare_data = generate_healthcare_data(100)
